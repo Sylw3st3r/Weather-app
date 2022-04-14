@@ -36,7 +36,6 @@ const displayResults = data => {
   city.innerText = `${data.name}, ${data.sys.country}`;
   date.innerText = formatDate(now);
   temp.innerText = `${Math.round(data.main.temp)}°c`;
-  console.log(getCurrectBackground(data.weather[0].id));
   document.body.style.backgroundImage = `url(${getCurrectBackground(data.weather[0].id)})`;
   weather_el.innerText = data.weather[0].main;
   hilow.innerText = `${Math.round(data.main.temp_min)}°c / ${Math.round(data.main.temp_max)}°c`;

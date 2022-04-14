@@ -12,7 +12,7 @@ const btn = document.getElementById("btn");
 const searchbox = document.querySelector('.search-box');
 searchbox.addEventListener('keypress', setQuery);
 
-function setQuery(event) {
+const setQuery = event =>{
   if (event.keyCode == 13) {
     getWeatherData(searchbox.value);
   }

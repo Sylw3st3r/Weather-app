@@ -1,5 +1,5 @@
 const api = {
-  key: "2dd26c31596c011d1cecee5d35fd08bc",
+  key: "",
   base: "https://api.openweathermap.org/data/2.5/"
 }
 const city = document.querySelector('.location .city');

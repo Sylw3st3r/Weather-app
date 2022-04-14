@@ -2,6 +2,9 @@ const api = {
   key: "",
   base: "https://api.openweathermap.org/data/2.5/"
 }
+
+const months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+const days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
 const city = document.querySelector('.location .city');
 const date = document.querySelector('.location .date');
 const temp = document.querySelector('.current .temp');
@@ -10,7 +13,6 @@ const hilow = document.querySelector('.hi-low');
 const container = document.querySelector(".app-wrap");
 const btn = document.getElementById("btn");
 const searchbox = document.querySelector('.search-box');
-searchbox.addEventListener('keypress', setQuery);
 
 const setQuery = event =>{
   if (event.keyCode == 13) {
@@ -18,6 +20,7 @@ const setQuery = event =>{
   }
 }
 
+searchbox.addEventListener('keypress', setQuery);
 btn.onclick = () => {getWeatherData(searchbox.value)};
 
 const getWeatherData = query => {
@@ -125,9 +128,6 @@ const getCurrectBackground = code => {
 
 
 const formatDate = d => {
-  const months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
-  const days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
-
   const day = days[d.getDay()];
   const date = d.getDate();
   const month = months[d.getMonth()];
